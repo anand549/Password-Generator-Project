@@ -99,11 +99,10 @@ h1 {
   transform-origin: bottom;
   transition: all 250ms ease-in-out;
 }
-.copy-msg.active{
-    opacity: 1;
-    transform: scale(1);
+.copy-msg.active {
+  opacity: 1;
+  transform: scale(1);
 }
-
 
 .input-conatiner {
   background-color: rgba(9, 8, 17, 0.736);

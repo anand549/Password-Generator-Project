@@ -25,16 +25,15 @@ function handleSlider() {
   inputSlider.value = passwordLen;
   lengthDisplay.innerText = passwordLen;
   // anything
-const min = parseInt(inputSlider.min);
-const max = parseInt(inputSlider.max);
+  const min = parseInt(inputSlider.min);
+  const max = parseInt(inputSlider.max);
 
-// const percentage = ((passwordLen - min) * 100) / (max - min);
-// inputSlider.style.backgroundSize = `${percentage}% 100%`;
-  // inputSlider.style.backgroundSize = 
+  // const percentage = ((passwordLen - min) * 100) / (max - min);
+  // inputSlider.style.backgroundSize = `${percentage}% 100%`;
+  // inputSlider.style.backgroundSize =
   //   ((passwordLen - min) * 100) / (max - min) + "% 100%";
   const percentage = ((passwordLen - min) * 100) / (max - min);
   inputSlider.style.background = `linear-gradient(to right, #DE0DDE ${percentage}%, #ccc ${percentage}%)`;
-
 }
 
 function setIndicator(color) {
@@ -200,7 +199,7 @@ generation.addEventListener("click", (e) => {
     password += funcArr[randIdx]();
     console.log("remaining");
   }
-  //shuffle the password
+  //shuffle  password
   password = shufflePass(Array.from(password));
   console.log("shuffling done");
   //show in UI
@@ -211,5 +210,3 @@ generation.addEventListener("click", (e) => {
   calculateStrength();
   console.log("strength calculated");
 });
-
-
