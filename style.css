@@ -1,0 +1,235 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(13, 13, 128, 1) 1%,
+    rgba(53, 128, 161, 1) 21%,
+    rgba(32, 52, 107, 1) 28%,
+    rgba(36, 17, 101, 1) 33%,
+    rgba(36, 17, 101, 1) 44%,
+    rgba(36, 17, 101, 1) 85%,
+    rgba(32, 52, 107, 1) 99%,
+    rgba(32, 52, 107, 1) 99%,
+    rgba(156, 156, 215, 1) 100%
+  );
+}
+.wrapper {
+  width: 90%;
+  max-width: 450px;
+}
+h1 {
+  font-family: monospace;
+  color: white;
+  opacity: 0.9;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+.display-container {
+  position: relative;
+  background-color: rgba(9, 8, 17, 0.736);
+  border-radius: 1rem;
+  /* border-bottom: 0.35rem solid rgba(121, 47, 121, 0.629); */
+  margin: 1rem 0;
+  padding-top: 0.35rem;
+  /* border: 2px solid red; */
+}
+.display {
+  width: 100%;
+  background-color: transparent;
+  padding: 1.15rem 1rem;
+  color: var(--vb-yellow);
+  font-size: 1.5rem;
+  line-height: 30px;
+  letter-spacing: 1px;
+  padding-right: 3.25rem;
+  border: none;
+}
+.display::placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.15rem;
+  font-size: 1.5rem;
+  line-height: 30px;
+  color: rgba(254, 187, 71, 0.975);
+  opacity: 0.65;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+.display-container button {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+}
+.copy-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.copy-msg {
+  position: absolute;
+  background-color: rgba(222, 13, 222, 0.878);
+  color: rgba(254, 187, 71, 0.975);
+  font-size: 1.25rem;
+  top: -35px;
+  left: -25px;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+  transition: all 250ms ease-in-out;
+}
+.copy-msg.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.input-conatiner {
+  background-color: rgba(9, 8, 17, 0.736);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+}
+.pass-length {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pass-length p:nth-child(1) {
+  color: white;
+  font-size: 1.5rem;
+}
+.pass-length p:nth-child(2) {
+  color: rgba(254, 187, 71, 0.975);
+  font-size: 1.5rem;
+}
+
+.strength-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
+}
+.strength-container p {
+  color: white;
+  font-size: 1.5rem;
+}
+.indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: rgba(0, 128, 0, 0.684);
+  text-align: center;
+  border-radius: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 0 1rem;
+}
+.check input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(30, 204, 204);
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.35rem;
+}
+
+.check input:checked {
+  background-color: rgb(30, 204, 204);
+}
+.check input:checked::before {
+  content: "\2713";
+  position: absolute;
+  color: black;
+  font-size: 1.05rem;
+  font-weight: 600;
+  left: 50%;
+  top: -3.5px;
+  transform: translateX(-50%) translateY(5%);
+}
+.check label {
+  color: white;
+  opacity: 0.94;
+  font-size: 1.25rem;
+  letter-spacing: 0.75px;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 0.75rem;
+  cursor: pointer;
+  background-color: rgba(222, 13, 222, 0.878);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  background-image: linear-gradient(
+    rgb(222, 13, 222, 0.878),
+    rgb(222, 13, 222, 0.878)
+  );
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+}
+
+/* this is the psudo element selector that select the thumb element of a slider (draggable part)  */
+.slider::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: rgb(207, 207, 31);
+  cursor: pointer;
+  margin-top: -2px;
+  box-shadow: 0px 0px 20px 0px rgba(207, 207, 31);
+  transition: all 100ms ease-in;
+}
+.slider:focus {
+  outline: 2px solid yellow;
+}
+.slider::-webkit-slider-thumb:hover {
+  background-color: rgb(22, 11, 23);
+  outline: 2px solid rgb(207, 207, 31);
+  box-shadow: 0px 0px 20px 0px rgb(207, 207, 31);
+}
